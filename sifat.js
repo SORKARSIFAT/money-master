@@ -45,16 +45,48 @@ document.getElementById('btn-calculate').addEventListener("click" , function(){
 })
 
 
-// saving part
-
-
+// saving part : 
 document.getElementById('btn-save').addEventListener("click" , function(){
+
     // saveMoneyField 
     const saveMoneyField = document.getElementById('save-field');
     const saveMoneyPercentString = saveMoneyField.value;
     const saveMoneyPercent       = parseFloat(saveMoneyPercentString);
 
      // savingAmountElement:
+     const savingAmountElement = document.getElementById('saving-amount');
+     const previousSavingAmountString = savingAmountElement.innerText;
+     const previousSavingAmount   = parseFloat(previousSavingAmountString);
+
+    //  remaining-amount :
+    const remainingAmountElement = document.getElementById('remaining-balance');
+    const previousRemainingString = remainingAmountElement.innerText;
+    const previousRemaining      = parseFloat(previousRemainingString);
+
+    // balance :
+    const totalBalanceElement = document.getElementById('balance-total');
+    const previousBalanceString = totalBalanceElement.innerText;
+    const previousBalance = parseFloat(previousBalanceString);
      
+      // Calculate Saving Amount:
+      const newSavingAmount = (previousBalance / 100) * saveMoneyPercent;
+
+      // set Saving Amount:
+      savingAmountElement.innerText = newSavingAmount;
+
+    //   Calculate Remaining Amount :
+    const newRemainingAmount = previousBalance - newSavingAmount;
+
+    //  set Remaining Amount :
+
+    remainingAmountElement.innerText = newRemainingAmount;
+
+
+     
+
+
+
+
+
 
 })
