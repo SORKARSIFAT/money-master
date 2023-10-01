@@ -80,13 +80,4 @@ document.getElementById('btn-save').addEventListener("click" , function(){
     //  set Remaining Amount :
 
     remainingAmountElement.innerText = newRemainingAmount;
-
-
-     
-
-
-
-
-
-
 })
